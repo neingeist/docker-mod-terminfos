@@ -19,7 +19,7 @@ services:
     image: lscr.io/linuxserver/openssh-server:latest
     # [...]
     environment:
-      - DOCKER_MODS=linuxserver/mods:universal-package-install|ghcr.io/neingeist/docker-mod-terminfos
+      - DOCKER_MODS=ghcr.io/neingeist/docker-mod-terminfos|linuxserver/mods:universal-package-install
       - INSTALL_PACKAGES=tmux|vim|ncdu
 # [...]
 ```
