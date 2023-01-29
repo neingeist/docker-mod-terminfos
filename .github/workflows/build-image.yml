@@ -19,7 +19,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: "ghcr.io/$ENDPOINT"
+          images: ghcr.io/${{ env.ENDPOINT }}
           tags: |
             type=ref,event=branch
             # set latest tag for default branch
