@@ -14,6 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ghcr.io/neingeist/docker-mod-terminfos
+          tags: |
+            type=ref,event=branch
+            # set latest tag for default branch
+            type=raw,value=latest,enable={{is_default_branch}}
+
       - name: Build image
         run: |
           docker build --no-cache -t ${{ github.sha }} .
